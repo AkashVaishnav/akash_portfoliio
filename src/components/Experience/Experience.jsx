@@ -16,12 +16,12 @@ const experiences = [
   },
   {
     title: "FRONTEND DEVELOPER",
-    company: "Biztechnosys Pvt. Ltd.",
+    company: "BIZTECHNOSYS PVT LTD.",
     date: "Oct 2023 - July 2024",
   },
   {
     title: "SELF EMPLOYED",
-    company: "Code and build something in everyday.",
+    company: "CODE AND BUILD SOMETHING IN EVERYDAY.",
     date: "Jan 2020 - Present",
   },
 ];
