@@ -5,9 +5,9 @@ import { FaUserTie } from 'react-icons/fa';
 
 const experiences = [
   {
-    title: "FRONTEND DEVELOPER",
-    company: "Biztechnosys Pvt. Ltd.",
-    date: "Oct 2023 - July 2024",
+    title: "MERN STACK DEVELOPER",
+    company: "BRAINERHUB SOLUTIONS",
+    date: "Jan 2025 - Present",
   },
   {
     title: "FULLSTACK DEVELOPER",
@@ -15,9 +15,9 @@ const experiences = [
     date: "July 2024 - Jan 2025",
   },
   {
-    title: "MERN STACK DEVELOPER",
-    company: "BRAINERHUB SOLUTIONS",
-    date: "Jan 2025 - Present",
+    title: "FRONTEND DEVELOPER",
+    company: "Biztechnosys Pvt. Ltd.",
+    date: "Oct 2023 - July 2024",
   },
   {
     title: "SELF EMPLOYED",
@@ -29,52 +29,45 @@ const experiences = [
 function Experience() {
   return (
     <Container className="py-5" style={{ background: '', minHeight: '100vh' }}>
-      <h2 className="text-center mb-5" style={{ color: '#b388ff' }}>Experiences</h2>
-      <Row className="align-items-center">
-        {/* Left Side Image */}
-        <Col md={6} className="d-flex justify-content-center mb-4 mb-md-0">
-          <Image src={laptopImg} alt="Laptop illustration" fluid style={{ maxWidth: '90%' }} />
-        </Col>
-
-        {/* Right Side Cards */}
-        <Col md={6}>
-          {experiences.map((exp, index) => (
-            <Card
-              key={index}
-              className="bg-blue text-light mb-4 shadow-sm"
-              style={{
-                background: 'rgba(255, 255, 255, 0.05)',
-                borderRadius: '1rem',
-                padding: '1rem',
-              }}
-            >
-              <Row className="align-items-center">
-                {/* Icon Left Side */}
-                <Col xs="auto">
-                  <div
-                    className="d-flex align-items-center justify-content-center"
-                    style={{
-                      background: '#4b0082',
-                      borderRadius: '50%',
-                      width: '50px',
-                      height: '50px',
-                    }}
-                  >
-                    <FaUserTie size={24} color="white" />
-                  </div>
-                </Col>
-
-                {/* Text Right Side */}
-                <Col>
-                  <small className="text-success">({exp.date})</small>
-                  <h5 className="mb-1 mt-1" style={{ color: '#fff' }}>{exp.title}</h5>
-                  <p className="text-muted mb-0">{exp.company}</p>
+      <Row>
+                <Col md={12} className="home-about-social">
+                  <h1 className="text-center">EXPERIENCE</h1>
+                  <Row className="align-items-center mt-4">
+                    <Col md={6} style={{ paddingBottom: 20 }}>
+                      <img
+                        src={require("../../assets/about.png")}
+                        alt="home pic"
+                        className="img-fluid"
+                        style={{ maxHeight: "450px" }}
+                      />
+                    </Col>
+      
+                    {/* Right side: experience cards in a single column */}
+                    <Col md={6}>
+                      {experiences.map((experience, index) => (
+                        <div
+                          key={index}
+                          className="d-flex align-items-center mb-4 p-3 border border-primary rounded-4 bg-blue text-white shadow experience-card"
+                        >
+                          {/* Icon - vertically centered */}
+                          <div className="me-3 d-flex align-items-center justify-content-center">
+                            <FaUserTie className="fs-4" />
+                          </div>
+      
+                          {/* Centered content */}
+                          <div className="text-center flex-grow-1">
+                            <small className="text-info fw-semibold d-block">
+                              {experience.date}
+                            </small>
+                            <h5 className="mb-1">{experience.title}</h5>
+                            <p className="text-muted mb-0">{experience.company}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </Col>
+                  </Row>
                 </Col>
               </Row>
-            </Card>
-          ))}
-        </Col>
-      </Row>
     </Container>
   );
 }
